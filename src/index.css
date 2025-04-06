@@ -1,0 +1,198 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 250 100% 99%;
+    --foreground: 260 33% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 33% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 33% 11%;
+
+    --primary: 260 75% 52%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 214 59% 56%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 260 10% 96.1%;
+    --muted-foreground: 260 10% 45%;
+
+    --accent: 32 95% 65%;
+    --accent-foreground: 260 33% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 260 15% 90%;
+    --input: 260 15% 90%;
+    --ring: 260 75% 52%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 260 33% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 260 33% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 260 33% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 260 75% 52%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 214 59% 56%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 260 25% 20%;
+    --muted-foreground: 260 10% 75%;
+
+    --accent: 32 95% 65%;
+    --accent-foreground: 260 33% 11%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 260 25% 25%;
+    --input: 260 25% 25%;
+    --ring: 260 75% 52%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+/* Custom SoulChain styles */
+.glass {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-soul-primary via-[#4F46E5] to-soul-secondary;
+}
+
+.bg-mesh {
+  background-color: hsla(260, 75%, 98%, 1);
+  background-image:
+    radial-gradient(at 23% 36%, hsla(242, 88%, 96%, 1) 0px, transparent 50%),
+    radial-gradient(at 79% 24%, hsla(262, 91%, 96%, 1) 0px, transparent 50%),
+    radial-gradient(at 39% 88%, hsla(226, 91%, 95%, 1) 0px, transparent 50%);
+}
+
+.dark .bg-mesh {
+  background-color: hsla(260, 33%, 11%, 1);
+  background-image:
+    radial-gradient(at 23% 36%, hsla(242, 50%, 16%, 1) 0px, transparent 50%),
+    radial-gradient(at 79% 24%, hsla(262, 50%, 16%, 1) 0px, transparent 50%),
+    radial-gradient(at 39% 88%, hsla(226, 50%, 16%, 1) 0px, transparent 50%);
+}
+
+/* Animation classes */
+@keyframes particles {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100vw);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+    opacity: 0.8;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-particles {
+  animation: particles 15s linear infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 4s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
