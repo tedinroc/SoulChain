@@ -1,4 +1,10 @@
-# SoulChain Platform
+<div align="center">
+  <h1>SoulChain Platform</h1>
+  <p>
+    <a href="README.md">English</a> | 
+    <a href="README.zh.md">中文</a>
+  </p>
+</div>
 
 > Integrating AI and Blockchain for Digital Thought Preservation and Legacy
 
